@@ -1,0 +1,22 @@
+import org.gradle.internal.jvm.Jvm
+
+apply plugin: 'com.android.library'
+apply from: 'build.workaround-missing-resource.gradle'
+
+android {
+  compileSdkVersion rootProject.COMPILE_SDK_VERSION
+  buildToolsVersion rootProject.ANDROID_BUILD_TOOLS_VERSION
+
+  defaultConfig {
+    minSdkVersion rootProject.MIN_SDK_VERSION
+    targetSdkVersion rootProject.TARGET_SDK_VERSION
+  }
+}
+
+dependencies {
+  testCompile project(':epoxy-processor')
+  testCompile project(':epoxy-processortest2')
+  testCompile files(Jvm.current().getRuntimeJar())
+  testCompile files(Jvm.current().getToolsJar())
+  testCompile rootProject.deps.googleTestingCompile
+}
