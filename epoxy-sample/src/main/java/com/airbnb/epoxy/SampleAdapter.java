@@ -25,6 +25,9 @@ class SampleAdapter extends EpoxyAdapter {
     // We are going to use automatic diffing, so we just have to enable it first
     enableDiffing();
 
+
+
+
     // We're using the generated subclasses of our models, which is indicated by the underscore
     // appended to the class name. These generated classes contain our setter methods, as well as
     // the hashcode methods that tell the diffing algorithm when a model has changed
