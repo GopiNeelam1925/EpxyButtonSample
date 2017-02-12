@@ -15,6 +15,9 @@ import butterknife.ButterKnife;
  */
 public class MainActivity extends AppCompatActivity {
 
+
+
+
   @BindView(R.id.recycler_view) RecyclerView recyclerView;
 
   @Override
